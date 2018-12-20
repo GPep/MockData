@@ -1,0 +1,18 @@
+USE MockData
+GO
+
+IF OBJECT_ID('data.Address','u') IS NOT NULL
+BEGIN
+DROP TABLE data.Address 
+END
+
+
+CREATE TABLE data.Address(
+ID INT IDENTITY NOT NULL PRIMARY KEY,
+Address1 VARCHAR(100) NOT NULL,
+Town VARCHAR(50) NOT NULL,
+County Varchar(25) NOT NULL,
+Country Varchar(25) NOT NULL,
+POST_CODE Varchar(7) NOT NULL
+)
+

@@ -1,0 +1,12 @@
+USE MockData
+GO
+
+IF OBJECT_ID('data.PostCode','u') IS NOT NULL
+BEGIN
+DROP TABLE data.PostCode
+END
+
+CREATE TABLE data.PostCode(
+ID INT IDENTITY NOT NULL PRIMARY KEY,
+Name Varchar(7) NOT NULL
+)
