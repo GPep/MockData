@@ -1158,7 +1158,7 @@ GO
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(12)
 
-SET @FilePath = '\\Dv-sqlcln-01\e$\DBA\MockData\'
+SET @FilePath = 'C:\Users\pepperg\Documents\GitHub\MockData\Populate\'
 
 SET @FileName = 'Surnames.csv'
 
@@ -1208,7 +1208,7 @@ Name Varchar(200) NOT NULL UNIQUE
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(50)
 
-SET @FilePath = '\\Dv-sqlcln-01\e$\DBA\MockData\'
+SET @FilePath = 'C:\Users\pepperg\Documents\GitHub\MockData\Populate\'
 
 SET @FileName = 'BusinessData.csv'
 
@@ -1293,7 +1293,7 @@ ADD CONSTRAINT FK_CountryID
 FOREIGN KEY (CountryID) REFERENCES Country(CountryID)
 
 --
--- Dumping data for table `counties`
+-- Dumping data for table 'counties'
 --
 
 INSERT INTO dbo.COUNTY (county, CountryID) VALUES
@@ -1552,7 +1552,7 @@ GO
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(50)
 
-SET @FilePath = '\\Dv-sqlcln-01\e$\DBA\MockData\'
+SET @FilePath = 'C:\Users\pepperg\Documents\GitHub\MockData\Populate\'
 
 SET @FileName = 'male.firstnames.csv'
 
