@@ -23,6 +23,7 @@ BEGIN TRANSACTION;
 EXECUTE USP_CreateMaleIndividual @Count = @Count
 EXECUTE USP_GeneratePhoneNumber @Count = @Count
 EXECUTE USP_RandomBirthDate @Count = @Count
+EXECUTE USP_GenerateAddress @Count = @Count
 
 
 COMMIT TRANSACTION;

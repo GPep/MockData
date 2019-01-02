@@ -20,7 +20,9 @@ DECLARE @ErrorNumber AS INT, @ErrorMessage AS NVarchar(1000), @error_severity AS
 BEGIN TRY;
 BEGIN TRANSACTION;
 
-
+EXECUTE USP_CreateBusiness @Count = @Count
+EXECUTE USP_GeneratePhoneNumber @Count = @Count
+EXECUTE USP_GenerateAddress @Count = @Count
 
 COMMIT TRANSACTION;
 

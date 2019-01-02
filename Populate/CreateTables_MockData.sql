@@ -1,6 +1,14 @@
 USE [MockData]
 GO
 
+/*
+************REMEMBER*****************
+You will need to modify lines 1169, 1219 and 1548
+so that the @filepath points to the location of the CSV Files on your commputer/server.
+
+
+*/
+
 IF EXISTS (SELECT * FROM sys.schemas WHERE name = 'Data')
 BEGIN
 EXEC('DROP SCHEMA Data')
@@ -1158,7 +1166,7 @@ GO
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(12)
 
-SET @FilePath = 'C:\Users\pepperg\Documents\GitHub\MockData\Populate\'
+SET @FilePath = '\\Dv-sqlcln-02\dba\Populate\'
 
 SET @FileName = 'Surnames.csv'
 
@@ -1208,7 +1216,7 @@ Name Varchar(200) NOT NULL UNIQUE
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(50)
 
-SET @FilePath = 'C:\Users\pepperg\Documents\GitHub\MockData\Populate\'
+SET @FilePath = '\\Dv-sqlcln-02\dba\Populate\'
 
 SET @FileName = 'BusinessData.csv'
 
@@ -1494,21 +1502,6 @@ VALUES
 
 GO
 
-IF OBJECT_ID('data.individual','u') IS NOT NULL
-BEGIN
-DROP TABLE data.individual
-END
-
-
-CREATE TABLE [data].[Individual](
-	[id] INT IDENTITY PRIMARY KEY,
-	[first_name] [varchar](50) NOT NULL,
-	[last_name] [varchar](50) NOT NULL,
-	[gender] [varchar](1) NOT NULL,
-	[Title] [varchar](50) NOT NULL,
-	[EmailAddress] [Varchar](50) NOT NULL
-) ON [PRIMARY]
-
 IF OBJECT_ID('data.MaleIndividual','u') IS NOT NULL
 BEGIN
 DROP TABLE data.MaleIndividual
@@ -1552,7 +1545,7 @@ GO
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(50)
 
-SET @FilePath = 'C:\Users\pepperg\Documents\GitHub\MockData\Populate\'
+SET @FilePath = '\\Dv-sqlcln-02\dba\Populate\'
 
 SET @FileName = 'male.firstnames.csv'
 

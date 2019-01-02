@@ -1,4 +1,24 @@
 ﻿function Create-MockData
+<#
+This function creates the MockData database. 
+
+You must enter a parameter for the $ComputerName and location of the source files for the database. 
+The $sa parameter defaults to 'Sa' and is used to set the database owner. 
+This can be changed to whatever you want the sa account to be
+
+************REMEMBER*****************
+You will need to modify lines 1169, 1219 and 1548 in the ‘CreateTables_MockData’ script before you run this
+so that the @filepath points to the location of the CSV Files on your commputer/server.
+
+
+EXAMPLE
+Create-MockData -ComputerName ServerName -Source 'C:\Users\pepperg\Documents\GitHub\MockData' -SA 'Baltar'
+
+
+#>
+
+
+
 {
     [CmdletBinding()]
 	param
@@ -13,10 +33,10 @@
 
     [Parameter(Mandatory=$false)]
     [ValidateNotNullOrEmpty()]
-    [String]$sa = 'C4rb0n'
+    [String]$sa = 'sa'
     )
 
-#Create-MockData -ComputerName DV-SQLCLN-01 -Source 'C:\Users\pepperg\Documents\GitHubMockData'
+
 
 
  process
@@ -54,7 +74,7 @@
     {
     Write-Host "Connection to $computerName Could not be established. Install Cancelled"
     "Connection to $computerName Could not be established. Install cancelled at $time" | out-file $logFile -append
-    Exit
+    #Exit
     }
 
 
@@ -99,7 +119,7 @@
        
 
        "*******************completed at $Time ***************" | out-file $logFile -append
-       Exit
+       #Exit
     }
    }
 
@@ -124,7 +144,7 @@ function Create-DB
 		try
 		{
 		$DBRoot = $Source + "\CreateDB"
-        $Sql = Get-ChildItem $Dbroot |  Where-Object {$_.Name -eq "MuckleDB_Create_Script.sql"}
+        $Sql = Get-ChildItem $Dbroot |  Where-Object {$_.Name -eq "CreateDB_MockData.sql"}
         write-host "The Database will now be created" -BackgroundColor DarkGreen -ForegroundColor Yellow
                 
  
@@ -369,9 +389,6 @@ try
 }
 
 }
-
-
-
 
 Function Populate-DB
 {
