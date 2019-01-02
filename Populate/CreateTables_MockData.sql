@@ -1166,7 +1166,7 @@ GO
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(12)
 
-SET @FilePath = '\\Dv-sqlcln-02\dba\Populate\'
+SET @FilePath = 'E:\dba\Populate\'
 
 SET @FileName = 'Surnames.csv'
 
@@ -1216,7 +1216,7 @@ Name Varchar(200) NOT NULL UNIQUE
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(50)
 
-SET @FilePath = '\\Dv-sqlcln-02\dba\Populate\'
+SET @FilePath = 'E:\dba\Populate\'
 
 SET @FileName = 'BusinessData.csv'
 
@@ -1545,7 +1545,7 @@ GO
 DECLARE @FilePath Varchar(200)
 DECLARE @FileName Varchar(50)
 
-SET @FilePath = '\\Dv-sqlcln-02\dba\Populate\'
+SET @FilePath = 'E:\dba\Populate\'
 
 SET @FileName = 'male.firstnames.csv'
 
