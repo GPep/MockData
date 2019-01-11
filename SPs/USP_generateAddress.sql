@@ -46,7 +46,7 @@ END
 CREATE TABLE #Address
 (Address1 Varchar(100) NOT NULL,
 Town Varchar(50) NOT NULL,
-County Varchar(25) NOT NULL,
+County Varchar(50) NOT NULL,
 Country Varchar(25) NOT NULL,
 Post_code Varchar(7) NOT NULL
 )
@@ -69,4 +69,4 @@ DROP TABLE #Address
 
 END
 
---EXECUTE usp_generateAddress @count = 10
+--EXECUTE usp_generateAddress @count = 500
